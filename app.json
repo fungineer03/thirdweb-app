@@ -1,0 +1,88 @@
+{
+  "expo": {
+    "name": "Blockchain AttSys",
+    "slug": "blockchain-attsys",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "com.fungineer.thirdweb",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fungineer.blockchainattsys",
+      "associatedDomains": [
+        "webcredentials:thirdweb.com",
+        "applinks:thirdweb.com"
+      ],
+      "extraPods": [
+        {
+          "name": "OpenSSL-Universal",
+          "configurations": ["Release", "Debug"],
+          "modular_headers": true,
+          "version": "3.3.2000"
+        }
+      ],
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Allow Face ID to authenticate the access"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.fungineer.blockchainattsys",
+      "intentFilters": [
+        {
+          "autoVerify": true,
+          "action": "VIEW",
+          "data": {
+            "scheme": "https",
+            "host": "thirdweb.com"
+          },
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26
+          },
+          "ios": {}
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow the app to use Face ID."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "d1d7acaf-b44a-4425-af35-620596448499"
+      }
+    },
+    "owner": "thirdweb"
+  }
+}
